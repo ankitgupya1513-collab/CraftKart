@@ -8,9 +8,6 @@
     <title>Login - CraftKart</title>
 
     <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
@@ -24,14 +21,12 @@
         <input
             type="email"
             id="email"
-            placeholder="Enter Email"
-            required>
+            placeholder="Enter Email">
 
         <input
             type="password"
             id="password"
-            placeholder="Enter Password"
-            required>
+            placeholder="Enter Password">
 
         <p id="loginMessage"></p>
 
@@ -39,7 +34,6 @@
             Login
         </button>
 
-        <!-- Forgot Password -->
         <p>
             <a href="forgot-password.html">
                 Forgot Password?
@@ -70,8 +64,8 @@ function login() {
     const message =
         document.getElementById("loginMessage");
 
-    const correctEmail = "ankit@gmail.com";
-    const correctPassword = "12345";
+    const savedUser =
+        JSON.parse(localStorage.getItem("craftkartUser"));
 
     if (email === "" || password === "") {
 
@@ -79,16 +73,27 @@ function login() {
             "Please enter email and password.";
 
         message.style.color = "red";
+        return;
+    }
 
+    if (!savedUser) {
+
+        message.textContent =
+            "No account found. Please Sign Up first.";
+
+        message.style.color = "red";
         return;
     }
 
     if (
-        email === correctEmail &&
-        password === correctPassword
+        email.toLowerCase() === savedUser.email.toLowerCase() &&
+        password === savedUser.password
     ) {
 
-        localStorage.setItem("loggedIn", "true");
+        localStorage.setItem(
+            "craftkartLoggedIn",
+            "true"
+        );
 
         message.textContent =
             "Login successful!";
@@ -96,9 +101,7 @@ function login() {
         message.style.color = "green";
 
         setTimeout(function () {
-
             window.location.href = "index.html";
-
         }, 500);
 
     } else {
