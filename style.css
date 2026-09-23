@@ -1,0 +1,533 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+/* Header */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#ff4081;
+    color:white;
+    padding:15px 50px;
+}
+
+.logo h2{
+    font-size:30px;
+}
+
+.search-box{
+    display:flex;
+}
+
+.search-box input{
+    width:350px;
+    padding:10px;
+    border:none;
+    outline:none;
+}
+
+.search-box button{
+    border:none;
+    background:white;
+    padding:10px 15px;
+    cursor:pointer;
+}
+
+.icons a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:18px;
+}
+
+/* Banner */
+
+.banner{
+    height:400px;
+    background:linear-gradient(to right,#ff4081,#ff9800);
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.banner h1{
+    font-size:50px;
+}
+
+.banner p{
+    font-size:22px;
+    margin:20px;
+}
+
+.banner button{
+    padding:12px 30px;
+    border:none;
+    border-radius:5px;
+    background:white;
+    color:#ff4081;
+    font-size:18px;
+    cursor:pointer;
+}
+
+/* Products */
+
+.products{
+    padding:50px;
+}
+
+.products h2{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.product-container{
+    display:flex;
+    gap:30px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.product{
+    background:white;
+    width:250px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+    text-align:center;
+    padding-bottom:20px;
+    transition:.3s;
+}
+
+.product:hover{
+    transform:translateY(-8px);
+}
+
+.product img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.product h3{
+    margin:15px 0;
+}
+
+.product p{
+    color:#ff4081;
+    font-size:20px;
+    margin-bottom:15px;
+}
+
+.product button{
+    background:#ff4081;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+.product button:hover{
+    background:#e91e63;
+}
+.category-bar{
+    background:white;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    padding:15px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+.category-bar a{
+    text-decoration:none;
+    color:#333;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.category-bar a:hover{
+    color:#ff4081;
+}
+/* Today's Deals */
+
+.deals{
+    padding:40px;
+    background:#fff;
+}
+
+.deals h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.deal-box{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.deal-card{
+    width:250px;
+    background:linear-gradient(135deg,#ff4081,#ff9800);
+    color:white;
+    padding:30px;
+    border-radius:12px;
+    text-align:center;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.deal-card:hover{
+    transform:scale(1.05);
+}
+.rating{
+    color:#f7b500;
+    font-size:18px;
+    margin-bottom:10px;
+}
+#cart-count{
+    background:red;
+    color:white;
+    padding:2px 7px;
+    border-radius:50%;
+    font-size:12px;
+    margin-left:5px;
+}
+/* Login Page */
+
+.login-container{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#f5f5f5;
+}
+
+.login-box{
+width:380px;
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 0 15px rgba(0,0,0,.2);
+text-align:center;
+}
+
+.login-box h2{
+margin-bottom:30px;
+color:#ff4081;
+}
+
+.login-box input{
+width:100%;
+padding:12px;
+margin:12px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.login-box button{
+width:100%;
+padding:12px;
+background:#ff4081;
+color:white;
+border:none;
+border-radius:5px;
+font-size:18px;
+cursor:pointer;
+}
+
+.login-box button:hover{
+background:#e91e63;
+}
+
+.login-box p{
+margin-top:20px;
+}
+
+.login-box a{
+text-decoration:none;
+color:#ff4081;
+font-weight:bold;
+}
+#products-section {
+    padding: 50px 8%;
+    background: #fff;
+    text-align: center;
+}
+
+#category-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.product-card h3 {
+    margin: 15px 0 8px;
+    font-size: 20px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e75480;
+}
+
+.product-card button {
+    border: none;
+    background: #e75480;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.product-card button:hover {
+    background: #d63d6b;
+}
+
+.contact-box {
+    padding: 40px;
+    background: #fff0f5;
+    border-radius: 15px;
+    font-size: 18px;
+}
+.search-results-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 0 0 8px 8px;
+    z-index: 1000;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.search-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+.search-item:hover {
+    background-color: #f5f5f5;
+}
+.navbar {
+    display: flex;
+    justify-content: flex-start; /* ya center */
+    align-items: center;
+    gap: 10px; /* Links ke beech spacing badhane ke liye ise 25px ya 30px bhi kar sakte hain */
+    padding: 10px 10px; /* Navbar ke andar upar-niche aur side me jagah dene ke liye */
+}
+.navbar a {
+    text-decoration: none; /* Underline hatane ke liye (optional) */
+    color: #333;           /* Text color */
+    padding: 8px 10px;     /* Left-right me 15px ki spacing dega */
+    display: inline-block;
+}
+/* Apni CSS file mein ise add karein */
+.navbar {
+    background-color: #87CEEB !important; /* Sky Blue hex code */
+}
+.navbar a:hover {
+    color: red;
+}
+.buy-btn {
+    background-color: #ff1493;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    margin-top: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.buy-btn:hover {
+    background-color: #e60073;
+}
+/* Cart Product Size */
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.cart-item img {
+    width: 200px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.cart-info {
+    flex: 1;
+}
+
+.cart-info h3 {
+    margin: 0 0 8px;
+    font-size: 20px;
+}
+.logout-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.logout-btn:hover {
+    background: #c0392b;
+}
+.contact-page {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 30px auto;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.contact-info,
+.contact-form {
+    flex: 1;
+    padding: 25px;
+    border-radius: 10px;
+    background: #f8f8f8;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.contact-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.contact-page {
+    min-height: 100vh;
+    padding: 50px 20px;
+    text-align: center;
+
+    background-image: url("images/contact-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.contact-info {
+   background: rgba(255, 255, 255, 0.30);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
+}
+
+.contact-info h3 {
+    color: #7b4b2a;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    color: #4a3525;
+    font-size: 17px;
+    margin: 15px 0;
+}
+.contact-form input,
+.contact-form textarea {
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(120, 90, 60, 0.4);
+    color: #333;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #555;
+}
+.contact-form {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(5px);
+}
+/* CraftKart Category Background */
+
+.category-background {
+    background-image: url("images/craft-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px 20px;
+    border-radius: 15px;
+}
+/* Only Home Page Background */
+body.home-page {
+    background-image: url("images/craft-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - CraftKart</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <div class="login-box">
+
+        <h2>CraftKart Login</h2>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter Email"
+            required>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter Password"
+            required>
+
+        <p id="loginMessage"></p>
+
+        <button type="button" onclick="login()">
+            Login
+        </button>
+
+        <!-- Forgot Password -->
+        <p>
+            <a href="forgot-password.html">
+                Forgot Password?
+            </a>
+        </p>
+
+        <p>
+            Don't have an account?
+            <a href="signup.html">
+                Sign Up
+            </a>
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+
+function login() {
+
+    const email =
+        document.getElementById("email").value.trim();
+
+    const password =
+        document.getElementById("password").value;
+
+    const message =
+        document.getElementById("loginMessage");
+
+    const correctEmail = "ankit@gmail.com";
+    const correctPassword = "12345";
+
+    if (email === "" || password === "") {
+
+        message.textContent =
+            "Please enter email and password.";
+
+        message.style.color = "red";
+
+        return;
+    }
+
+    if (
+        email === correctEmail &&
+        password === correctPassword
+    ) {
+
+        localStorage.setItem("loggedIn", "true");
+
+        message.textContent =
+            "Login successful!";
+
+        message.style.color = "green";
+
+        setTimeout(function () {
+
+            window.location.href = "index.html";
+
+        }, 500);
+
+    } else {
+
+        message.textContent =
+            "Invalid email or password.";
+
+        message.style.color = "red";
+    }
+}
+
+</script>
+
+</body>
+</html>

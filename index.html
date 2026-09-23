@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CraftKart - Handmade Craft Store</title>
+    <script>
+    if (localStorage.getItem("loggedIn") !== "true") {
+        window.location.href = "login.html";
+    }
+</script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body class="home-page"></body>
+
+<header>
+    <div class="logo">
+        <h2>CraftKart</h2>
+    </div>
+
+    <div class="search-box" style="position: relative;">
+        <input type="text" id="searchInput" placeholder="Search handmade products...">
+        <button><i class="fas fa-search"></i></button>
+        <div id="searchResults" class="search-results-dropdown"></div>
+    </div>
+
+    <div class="icons">
+        <a href="login.html">Login</a>
+        <a href="cart.html">
+    <i class="fas fa-shopping-cart"></i>
+    <span id="cart-count">0</span>
+</a>
+    </div>
+</header>
+<nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="products.html?category=decor">Home Decor</a>
+    <a href="products.html?category=wallart">Wall Art</a>
+    <a href="products.html?category=jewellary">Jewellery</a>
+    <a href="products.html?category=gifts">Gift Items</a>
+    <a href="products.html?category=candles">Candles</a>
+    <a href="products.html?category=crochet">Crochet</a>
+    <a href="contact.html">Contact</a>
+    <button onclick="logout()" class="logout-btn">
+    Logout
+</button>
+</nav>
+<section id="products-section">
+
+    <h2 id="category-title">Featured Handmade Products</h2>
+
+    <div id="product-container" class="product-grid"></div>
+
+</section>
+<section id="home" class="banner">
+    <h1>Beautiful Handmade Crafts</h1>
+    <p>Unique products made with love ❤️</p>
+    <button>Shop Now</button>
+</section>
+<section class="deals">
+
+<h2>🔥 Today's Deals</h2>
+
+<div class="deal-box">
+
+<div class="deal-card">
+<h3>50% OFF</h3>
+<p>Handmade Candles</p>
+</div>
+
+<div class="deal-card">
+<h3>30% OFF</h3>
+<p>Wooden Decor</p>
+</div>
+
+<div class="deal-card">
+<h3>Buy 2 Get 1</h3>
+<p>Clay Pots</p>
+</div>
+
+</div>
+
+</section>
+<section class="products">
+
+<h2>Featured Products</h2>
+
+<div class="product-container">
+
+<div class="product">
+<img src="images/handmade vase.png" alt="">
+<h3>Handmade Vase</h3>
+<p>₹499</p>
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+<button class="cart-btn"
+onclick='addToCart({
+    name: "Handmade Vase",
+    price: "499",
+    image: "images/handmade vase.png"
+})'>
+    Add to Cart
+</button>
+<button class="buy-btn" onclick="buyNow({
+    name: 'Handmade Vase',
+    price: '499',
+    image: 'images/handmade vase.png'
+})">
+    Buy Now
+</button>
+</div>
+
+<div class="product">
+<img src="images/wooden lamp.jpg" alt="">
+<h3>Wooden Lamp</h3>
+<p>₹899</p>
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+<button class="cart-btn"
+onclick='addToCart({
+    name: "Wooden Lamp",
+    price: "899",
+    image: "images/wooden lamp.jpg"
+})'>
+    Add to Cart
+</button>
+<button class="buy-btn" onclick="buyNow({
+    name: 'Wooden Lamp',
+    price: '899',
+    image: 'images/wooden lamp.jpg'
+})">
+    Buy Now
+</button>
+</div>
+
+<div class="product">
+<img src="images/wall decoration.jpg" alt="">
+<h3>Wall Decoration</h3>
+<p>₹699</p>
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+<button class="cart-btn"
+onclick='addToCart({
+    name: "Wall Decoration",
+    price: "699",
+    image: "images/wall decoration.jpg"
+})'>
+    Add to Cart
+</button>
+<button class="buy-btn" onclick="buyNow({
+    name: 'Wall Decoration',
+    price: '699',
+    image: 'images/wall decoration.jpg'
+})">
+    Buy Now
+</button>
+</div>
+
+<div class="product">
+<img src="images/clay pot.png" alt="">
+<h3>Clay Pot</h3>
+<p>₹399</p>
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+<button class="cart-btn"
+onclick='addToCart({
+    name: "Clay Pot",
+    price: "399",
+    image: "images/clay pot.png"
+})'>
+    Add to Cart
+</button>
+<button class="buy-btn" onclick="buyNow({
+    name: 'Clay Pot',
+    price: '399',
+    image: 'images/clay pot.png'
+})">
+    Buy Now
+</button>
+</div>
+
+<div class="product">
+<img src="images/birthday item.jpeg" alt="">
+<h3>Birthday Item</h3>
+<p>₹449</p>
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+<button class="cart-btn"
+onclick='addToCart({
+    name: "Birthday Item",
+    price: "449",
+    image: "images/birthday item.jpeg"
+})'>
+    Add to Cart
+</button>
+<button class="buy-btn" onclick="buyNow({
+    name: 'Birthday Item',
+    price: '449',
+    image: 'images/birthday item.jpeg'
+})">
+    Buy Now
+</button>
+</div>
+
+<div class="product">
+<img src="images/bracelet.jpeg" alt="">
+<h3>Bracelet</h3>
+<p>₹299</p>
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+<button class="cart-btn"
+onclick='addToCart({
+    name: "Bracelet",
+    price: "299",
+    image: "images/bracelet.jpeg"
+})'>
+    Add to Cart
+</button>
+<button class="buy-btn" onclick="buyNow('Bracelet', 299)">
+    Buy Now
+</button>
+</div>
+
+<div class="product">
+<img src="images/canvas art.jpeg" alt="">
+<h3>Canvas Art</h3>
+<p>₹799</p>
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+<button class="cart-btn"
+onclick='addToCart({
+    name: "Canvas Art",
+    price: "799",
+    image: "images/canvas art.jpeg"
+})'>
+    Add to Cart
+</button>
+<button class="buy-btn" onclick="buyNow('Canvas Art', 799)">
+    Buy Now
+</button>
+</div>
+
+<div class="product">
+<img src="images/earrings.jpeg" alt="">
+<h3>Earrings</h3>
+<p>₹249</p>
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+<button class="cart-btn"
+onclick='addToCart({
+    name: "Earrings",
+    price: "249",
+    image: "images/earrings.jpeg"
+})'>
+    Add to Cart
+</button>
+<button class="buy-btn" onclick="buyNow('Earrings', 249)">
+    Buy Now
+</button>
+</div>
+
+<div class="product">
+<img src="images/handmade flower vase.jpeg" alt="">
+<h3>Handmade Flower Vase</h3>
+<p>₹499</p>
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+<button class="cart-btn"
+onclick='addToCart({
+    name: "Handmade Flower Vase",
+    price: "499",
+    image: "images/handmade flower vase.jpeg"
+})'>
+    Add to Cart
+</button>
+<button class="buy-btn" onclick="buyNow('Handmade flower vase', 499)">
+    Buy Now
+</button>
+</div>
+
+<div class="product">
+<img src="images/handmade gift.jpeg" alt="">
+<h3>handmade Gift</h3>
+<p>₹599</p>
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+<button class="cart-btn"
+onclick='addToCart({
+    name: "Handmade Gift",
+    price: "599",
+    image: "images/handmade gift.jpeg"
+})'>
+    Add to Cart
+</button>
+<button class="buy-btn" onclick="buyNow('Handmade gift', 599)">
+    Buy Now
+</button>
+</div>
+
+<div class="product">
+<img src="images/necklace.jpeg" alt="">
+<h3>Necklace</h3>
+<p>₹499</p>
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+<button class="cart-btn"
+onclick='addToCart({
+    name: "Necklace",
+    price: "499",
+    image: "images/necklace.jpeg"
+})'>
+    Add to Cart
+</button>
+<button class="buy-btn" onclick="buyNow('Necklace', 499)">
+    Buy Now
+</button>
+</div>
+
+<div class="product">
+<img src="images/showpiece.jpeg" alt="">
+<h3>Showpiece</h3>
+<p>₹399</p>
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+<button class="cart-btn"
+onclick='addToCart({
+    name: "Showpiece",
+    price: "399",
+    image: "images/showpiece.jpeg"
+})'>
+    Add to Cart
+</button>
+<button class="buy-btn" onclick="buyNow('Showpiece', 399)">
+    Buy Now
+</button>
+</div>
+
+<div class="product">
+<img src="images/special gift.jpeg" alt="">
+<h3>Special Gift</h3>
+<p>₹699</p>
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+<button class="cart-btn"
+onclick='addToCart({
+    name: "Special Gift",
+    price: "699",
+    image: "images/special gift.jpeg"
+})'>
+    Add to Cart
+</button>
+<button class="buy-btn" onclick="buyNow('Special gift', 699)">
+    Buy Now
+</button>
+</div>
+
+<div class="product">
+<img src="images/wall decor.jpeg" alt="">
+<h3>Wall Decor</h3>
+<p>₹599</p>
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+<button class="cart-btn"
+onclick='addToCart({
+    name: "Wall Decor",
+    price: "599",
+    image: "images/wall decor.jpeg"
+})'>
+    Add to Cart
+</button>
+<button class="buy-btn" onclick="buyNow('Wall decor', 599)">
+    Buy Now
+</button>
+</div>
+
+<div class="product">
+<img src="images/wall hanging.jpeg" alt="">
+<h3>Wall Hanging</h3>
+<p>₹699</p>
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+<button class="cart-btn"
+onclick='addToCart({
+    name: "Wall Hanging",
+    price: "699",
+    image: "images/wall hanging.jpeg"
+})'>
+    Add to Cart
+</button>
+<button class="buy-btn" onclick="buyNow('Wall hanging', 699)">
+    Buy Now
+</button>
+</div>
+
+<div class="product">
+<img src="images/wall painting.jpeg" alt="">
+<h3>Wall Painting</h3>
+<p>₹899</p>
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+<button class="cart-btn"
+onclick='addToCart({
+    name: "Wall Painting",
+    price: "899",
+    image: "images/wall painting.jpeg"
+})'>
+    Add to Cart
+</button>
+<button class="buy-btn" onclick="buyNow('Wall painting', 899)">
+    Buy Now
+</button>
+</div>
+
+<div class="product">
+<img src="images/handmade candle.jpeg" alt="">
+<h3>Handle Candle</h3>
+<p>₹299</p>
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+<button class="cart-btn"
+onclick='addToCart({
+    name: "Handmade Candle",
+    price: "299",
+    image: "images/handmade candle.jpeg"
+})'>
+    Add to Cart
+</button>
+<button class="buy-btn" onclick="buyNow('Handmade candle', 299)">
+    Buy Now
+</button>
+</div>
+
+<div class="product">
+<img src="images/flower candle.jpeg" alt="">
+<h3>Flower Candle</h3>
+<p>₹349</p>
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+<button class="cart-btn"
+onclick='addToCart({
+    name: "Flower candle",
+    price: "349",
+    image: "images/flower candle.jpeg"
+})'>
+    Add to Cart
+</button>
+<button class="buy-btn" onclick="buyNow('Flower candle', 349)">
+    Buy Now
+</button>
+</div>
+
+<div class="product">
+<img src="images/decorative candle.jpeg" alt="">
+<h3>Decorative Candle</h3>
+<p>₹399</p>
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+<button class="cart-btn"
+onclick='addToCart({
+    name: "Decorative candle",
+    price: "399",
+    image: "images/decorative candle.jpeg"
+})'>
+    Add to Cart
+</button>
+<button class="buy-btn" onclick="buyNow('Decorative candle', 399)">
+    Buy Now
+</button>
+</div>
+
+<div class="product">
+<img src="images/crochet flower.jpeg" alt="">
+<h3>Crochet Flower</h3>
+<p>₹249</p>
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+<button class="cart-btn"
+onclick='addToCart({
+    name: "Crochet flower",
+    price: "249",
+    image: "images/croch flowe.jpeg"
+})'>
+    Add to Cart
+</button>
+<button class="buy-btn" onclick="buyNow('Crochet flower', 249)">
+    Buy Now
+</button>
+</div>
+
+<div class="product">
+<img src="images/crochet teddy.jpeg" alt="">
+<h3>Crochet Teddy</h3>
+<p>₹599</p>
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+<button class="cart-btn"
+onclick='addToCart({
+    name: "Crochet teddy",
+    price: "599",
+    image: "images/crochet teddy.jpeg"
+})'>
+    Add to Cart
+</button>
+<button class="buy-btn" onclick="buyNow('Crochet teddy', 599)">
+    Buy Now
+</button>
+</div>
+
+<div class="product">
+<img src="images/crochet bag.jpeg" alt="">
+<h3>Crochet Bag</h3>
+<p>₹799</p>
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+<button class="cart-btn"
+onclick='addToCart({
+    name: "Crochet bag",
+    price: "799",
+    image: "images/crochet bag.jpeg"
+})'>
+    Add to Cart
+</button>
+<button class="buy-btn" onclick="buyNow('Crochet bag', 799)">
+    Buy Now
+</button>
+</div>
+</div>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>

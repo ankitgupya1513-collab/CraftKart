@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us - CraftKart</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>CraftKart</h1>
+</header>
+
+<nav class="navbar">
+
+    <a href="index.html">Home</a>
+
+    <a href="products.html">Products</a>
+
+    <a href="cart.html">
+        🛒 Cart (<span id="cart-count">0</span>)
+    </a>
+
+    <a href="contact.html">
+        Contact
+    </a>
+
+    <button onclick="logout()" class="logout-btn">
+        Logout
+    </button>
+
+</nav>
+
+<main class="contact-page">
+
+    <h2>Contact Us 💌</h2>
+
+    <p>
+        We would love to hear from you!
+    </p>
+
+    <div class="contact-container">
+
+        <div class="contact-info">
+
+            <h3>Get In Touch</h3>
+
+            <p>📧 Email: handmadecraft@gmail.com</p>
+
+            <p>📱 Phone: +91 9876543210</p>
+
+            <p>📍 Address: India</p>
+
+        </div>
+
+        <div class="contact-form">
+
+            <h3>Send Us a Message</h3>
+
+            <input
+                type="text"
+                placeholder="Your Name">
+
+            <input
+                type="email"
+                placeholder="Your Email">
+
+            <textarea
+                placeholder="Your Message"></textarea>
+
+            <button onclick="sendMessage()">
+                Send Message
+            </button>
+
+            <p id="contactMessage"></p>
+
+        </div>
+
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+
+<script>
+
+function sendMessage() {
+
+    document.getElementById("contactMessage").textContent =
+        "Thank you! Your message has been received. 😊";
+
+}
+
+</script>
+
+</body>
+</html>
