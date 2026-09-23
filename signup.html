@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Create Account - CraftKart</title>
 
     <link rel="stylesheet" href="style.css">
@@ -18,30 +16,18 @@
 
         <h2>Create Account</h2>
 
-        <input
-            type="text"
-            id="name"
-            placeholder="Enter Name">
+        <input type="text" id="name" placeholder="Enter Name">
 
-        <input
-            type="email"
-            id="email"
-            placeholder="Enter Email">
+        <input type="email" id="email" placeholder="Enter Email">
 
-        <input
-            type="password"
-            id="password"
-            placeholder="Create Password">
+        <input type="password" id="password" placeholder="Create Password">
 
-        <input
-            type="password"
-            id="confirmPassword"
-            placeholder="Confirm Password">
+        <input type="password" id="confirmPassword" placeholder="Confirm Password">
 
         <p id="signupMessage"></p>
 
         <button type="button" onclick="signup()">
-            Sign Up
+            Create Account
         </button>
 
         <p>
@@ -57,22 +43,17 @@
 
 function signup() {
 
-    const name =
-        document.getElementById("name").value.trim();
-
-    const email =
-        document.getElementById("email").value.trim();
-
-    const password =
-        document.getElementById("password").value;
-
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
     const confirmPassword =
         document.getElementById("confirmPassword").value;
 
     const message =
         document.getElementById("signupMessage");
 
-    if (name === "" || email === "" || password === "" || confirmPassword === "") {
+    if (name === "" || email === "" ||
+        password === "" || confirmPassword === "") {
 
         message.textContent = "Please fill all fields.";
         message.style.color = "red";
@@ -96,6 +77,8 @@ function signup() {
         "craftkartUser",
         JSON.stringify(user)
     );
+
+    localStorage.removeItem("craftkartLoggedIn");
 
     message.textContent =
         "Account created successfully!";
