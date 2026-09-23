@@ -568,6 +568,14 @@ onclick='addToCart({
 </section>
 
 <script src="script.js"></script>
+    <script>
+function logout() {
+
+    localStorage.removeItem("craftkartLoggedIn");
+
+    window.location.href = "login.html";
+}
+</script>
 
 </body>
 </html>
